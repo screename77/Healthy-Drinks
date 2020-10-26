@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>5 A Day</title>
+    <link rel="icon" type="image/x-icon" href="images/HeaderIcon.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src="/images/fiveadaylogo.png" alt="fruit logo" />
+      </a>
+      <button
+        class="menubar"
+        onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <svg width="50" height="60" viewBox="0 0 100 100">
+          <path
+            class="line line1"
+            d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
+          />
+          <path class="line line2" d="M 20,50 H 80" />
+          <path
+            class="line line3"
+            d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
+          />
+        </svg>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html"> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/recipes.html"> Recipes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us.html">About us</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/contact.html"
+              >Contact Us <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div
+      class="contactbody"
+      style="
+        background-image: url('images/contactImage.jpg');
+        background-size: cover;
+      "
+    >
+    <div id="myModal" class="modal fade">
+      <div class="modal-dialog modal-newsletter">
+        <div class="modal-content">
+          <form action="/examples/actions/confirmation.php" method="post">
+            <div class="modal-header">
+              <div class="icon-box">				
+                <h2><i class="far fa-envelope-open"></i></h2>
+              </div>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span>&times;</span></button>
+            </div>
+            <div class="modal-body text-center">
+              <h4>Subscribe to our newsletter</h4>	
+              <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your email" required>
+                <br>
+                <span class="input-group-append">
+                  <input type="button" class="btn1 btn-primary1" value="Subscribe" data-dismiss="modal" aria-hidden="true">
+                </span>
+              </div>
+            </div>
+          </form>			
+        </div>
+      </div>
+    </div>
+      <div id="sometext">
+        <h1>
+          Send us
+          <span
+            class="txt-rotate"
+            data-period="2000"
+            data-rotate='[ "your recipes.", "your reviews."]'
+          ></span>
+        </h1>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" id="form_container">
+            <h2>Contact Us</h2>
+            <p>
+              Please send your message below. We will get back to you at the
+              earliest!
+            </p>
+            <main>
+              <form role="form" id="ps_entry" name="ps_entry" method="post" onsubmit="return entry_check()" action="/user/ps/add/">
+                <div class="form-group row">
+                  <label for="f_name" class="col-sm-2 col-form-label"
+                    >Name*</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      required
+                      name="f_name"
+                      placeholder="Name..."
+                      class="form-control input"
+                      id="t1"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="f_topic" class="col-sm-2 col-form-label"
+                    >Topic*</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      required
+                      name="f_topic"
+                      placeholder="Topic..."
+                      class="form-control input"
+                      id="t2"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="f_message" class="col-sm-2 col-form-label"
+                    >Message</label
+                  >
+                  <div class="col-sm-10">
+                    <textarea
+                      name="f_message"
+                      placeholder="Message..."
+                      class="form-control input"
+                      id="t3"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!--<button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                  onclick="sub()"
+                >
+                  <div class="btnsubmit btn-three">
+                    <span>SUBMIT</span>
+                  </div>
+                </button>-->
+                <input type="button" name="btn"
+                 value="SUBMIT" id="submitBtn" data-toggle="modal" 
+                 data-target="#exampleModal" class="btn btnsubmit btn-primary" style="padding-bottom:55px;" />
+              </form>
+
+              <!--<button
+                  class="btn btn-primary"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                >
+                <div class="btnsubmit btn-three">
+                  <span>SUBMIT</span>
+                </div>
+                </button>-->
+            </main>
+          </div>
+        </div>
+      </div>
+      <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Thank you!</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Thank you for sending your message <p id="nm" style="display:inline;"></p>!
+                  We will respond soon! <i class="far fa-smile-beam"></i>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <footer>
+      <div class="d-flex justify-content-center align-items-center">
+        <a
+          class="d-inline-flex align-items-center justify-content-center linkedin"
+          href="#"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          class="d-inline-flex align-items-center justify-content-center facebook"
+          href="#"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          class="d-inline-flex align-items-center justify-content-center instagram"
+          href="#"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+      <ul>
+        <li>
+          &#169; 2020 5 A DAY
+        </li>
+      </ul>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/main.js"></script>
+    <script type="text/javascript">
+      function sub() {
+        if (
+          document.getElementById("t1").value != "" &&
+          document.getElementById("t2").value != ""
+        ) {
+          alert(
+            "Thank you for sending your message " +
+              $("#t1").val() +
+              " . We will respond soon."
+          );
+        }
+      }
+    </script>
+    <script>
+      $(document).ready(function() {
+          $('#submitBtn').click(function () {
+              $('#nm').html($('#t1').val());
+          });
+      
+          $('#submit').click(function () {
+              alert('submitting');
+              $('#ps_entry').submit();
+          });
+      });
+      $("#myModal").modal('show');
+      </script>
+  </body>
+</html>
